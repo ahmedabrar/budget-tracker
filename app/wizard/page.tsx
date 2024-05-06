@@ -32,7 +32,7 @@ async function page() {
         </h2>
 
         <h3 className="mt-2 text-center text-sm text-muted-foreground">
-          You can changeg these settings at anytime
+          You can change these settings at anytime
         </h3>
       </div>
       <Separator />

@@ -45,7 +45,7 @@ function MobileNavbar() {
                   key={item.label}
                   label={item.label}
                   link={item.link}
-                  clickCallback={() => setIsOpen(prev => !prev)}
+                  clickCallback={() => setIsOpen((prev) => !prev)}
                 />
               ))}
             </div>
@@ -57,7 +57,7 @@ function MobileNavbar() {
         </div>
         <div className="flex items-center gap-2">
           <ThemeSwitcherBtn />
-           <UserButton afterSignOutUrl="/sign-in" />
+          <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </nav>
     </div>
@@ -89,8 +89,15 @@ function DesktopNavbar() {
   );
 }
 
-function NavbarItem({ link, label, clickCallback }: { 
-  link: string; label: string, clickCallback?: () => void }) {
+function NavbarItem({
+  link,
+  label,
+  clickCallback,
+}: {
+  link: string;
+  label: string;
+  clickCallback?: () => void;
+}) {
   const pathname = usePathname();
 
   const isActtive = pathname === link;
@@ -104,7 +111,6 @@ function NavbarItem({ link, label, clickCallback }: {
           "w-full justify-start text-lg text-muted-foreground hover:text-foreground",
           isActtive && "text-foreground"
         )}
-
         onClick={() => {
           if (clickCallback) clickCallback();
         }}

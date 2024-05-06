@@ -1,7 +1,12 @@
 import Navbar from "@/components/Navbar";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 import React, { ReactNode } from "react";
 
-function layout({ children }: { children: ReactNode }) {
+async function layout({ children }: { children: ReactNode }) {
+  const user = await currentUser();
+
+  if (!user) return redirect("/sign-in");
   return (
     <div
       className="
