@@ -19,7 +19,7 @@ function Navbar() {
   );
 }
 
-const items = [
+export const items = [
   { label: "Dashboard", link: "/" },
   { label: "Transactions", link: "/transactions" },
   { label: "Manage", link: "/manage" },
@@ -30,7 +30,7 @@ function MobileNavbar() {
 
   return (
     <div className="block border-separate bg-background md:hidden">
-      <nav className="container flex items-center justify-between px-8">
+      <nav className="container flex items-center justify-between px-8 ">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant={"ghost"} size={"icon"}>
@@ -89,7 +89,7 @@ function DesktopNavbar() {
   );
 }
 
-function NavbarItem({
+export function NavbarItem({
   link,
   label,
   clickCallback,
